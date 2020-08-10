@@ -36,7 +36,7 @@
 
 </script>
 
-<div class='cell cell-{ cell.type }'
+<div class='cell cell-{ cell.type } m-2'
     on:mouseover={ handleMouseOver }
     on:mouseout={ handleMouseOut }
     on:click={ handleClick }></div>
@@ -50,5 +50,9 @@
 
   .cell-SOIL {
     background-color: aquamarine;
+  }
+
+  .cell-UNREAVEALED {
+    background-color: lavender;
   }
 </style>

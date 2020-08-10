@@ -24,7 +24,7 @@
 	
 { #if $appStore.started }
 
-	<div class='jumbotron my-5'>
+	<div>
 		{ #each Object.entries($gridStore.cells) as cell }
 
 			<Cell cell={ {
