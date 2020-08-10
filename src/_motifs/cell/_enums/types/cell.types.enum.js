@@ -1,12 +1,14 @@
-export const VOID = 'VOID';
-export const UNREAVEALED = 'UNREAVEALED';
-export const STONE = 'STONE';
-export const GROUND = 'GROUND';
-export const SOIL = 'SOIL';
-export const HUMUS = 'HUMUS';
-export const SAND = 'SAND';
-export const CLAY = 'CLAY';
-export const RIVER = 'RIVER';
-export const LAKE = 'LAKE';
-export const SEA = 'SEA';
-export const OCEAN = 'OCEAN';
+export default {
+  VOID: 'VOID',
+  UNREAVEALED: 'UNREAVEALED',
+  STONE: 'STONE',
+  GROUND: 'GROUND',
+  SOIL: 'SOIL',
+  HUMUS: 'HUMUS',
+  SAND: 'SAND',
+  CLAY: 'CLAY',
+  RIVER: 'RIVER',
+  LAKE: 'LAKE',
+  SEA: 'SEA',
+  OCEAN: 'OCEAN'
+}

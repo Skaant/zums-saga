@@ -6,3 +6,14 @@ html {
 body {
   background-color: initial;
 }
+
+.text-link {
+  color: #6a89cc !important;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn.btn-primary {
+  background-color: #6a89cc !important;
+  border: none;
+}

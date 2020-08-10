@@ -1,4 +1,4 @@
-import { SOIL } from '../../../_motifs/cell/_enums/types/cell.types.enum'
+import cellTypesEnum from '../../../_motifs/cell/_enums/types/cell.types.enum'
 import kolosPodBuildingData from "../../_buildings/kolos-pod/kolos-pod.building.data";
 import genetoSeedsExtensionData from '../../_extensions/geneto-seeds/geneto-seeds.extension.data';
 import kolosRelikItemData from '../../_items/kolos-relik/kolos-relik.item.data';
@@ -6,7 +6,7 @@ import kolosRelikItemData from '../../_items/kolos-relik/kolos-relik.item.data';
 export default {
   cells: {
     '0,0': {
-      type: SOIL,
+      type: cellTypesEnum.SOIL,
       building: {
         id: kolosPodBuildingData.id,
         state: {
@@ -24,6 +24,25 @@ export default {
             state: {}
           } ]
         }
+      }
+    },
+    '1,0': {
+      type: cellTypesEnum.UNREAVEALED
+    }
+  },
+  zums: {
+    '00000000': {
+      id: '00000000',
+      state: {
+        name: 'Vegara',
+        inventory: []
+      }
+    },
+    '00000001': {
+      id: '00000001',
+      state: {
+        name: 'Nokimundo',
+        inventory: []
       }
     }
   }
