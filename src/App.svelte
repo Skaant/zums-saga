@@ -6,7 +6,7 @@
 	import appStore from "./_stores/app/app.store"
 	import gridStore from "./_stores/grid/grid.store"
 	import Cell from "./_components/Cell/Cell.svelte";
-	import CellPanel from "./_components/CellPanel/CellPanel.svelte";
+	import CellModal from "./_components/CellModal/CellModal.svelte";
 	import appLangsEnum from "./_motifs/app/_enums/langs/app.langs.enum"
 	import LandingPage from './_components/LandingPage/LandingPage.svelte'
 	import Grid from './_components/Grid/Grid.svelte'
@@ -19,13 +19,18 @@
 	} = getGridSize($gridStore)
 
 	$: focusCell = $gridStore.selectedCell
-		|| $gridStore.hoveredCell
 
 </script>
 	
 { #if $appStore.started }
 
 	<Grid />
+
+	{ #if focusCell }
+
+		<CellModal cell={ focusCell } />
+		
+	{ /if }
 
 { :else }
 
