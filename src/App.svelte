@@ -8,6 +8,7 @@
 	import Cell from "./_components/Cell/Cell.svelte";
 	import CellPanel from "./_components/CellPanel/CellPanel.svelte";
 	import appLangsEnum from "./_motifs/app/_enums/langs/app.langs.enum"
+	import LandingPage from './_components/LandingPage/LandingPage.svelte'
 
 	const {
 		xMin,
@@ -19,97 +20,29 @@
 	$: focusCell = $gridStore.selectedCell
 		|| $gridStore.hoveredCell
 
-	function handleSwitchLang(lang) {
-
-		appStore.update(app => ({
-			
-			...app,
-			lang
-		}))
-	}
-
-	function handleStart() {
-
-		appStore.update(app => ({
-			
-			...app,
-			started: true
-		}))
-	}
-
 </script>
-
-<div class='container'>
-
-	{ JSON.stringify($appStore)}
 	
-	{ #if $appStore.started }
+{ #if $appStore.started }
 
-		<div class='jumbotron my-5'>
-			{ #each Object.entries($gridStore.cells) as cell }
+	<div class='jumbotron my-5'>
+		{ #each Object.entries($gridStore.cells) as cell }
 
-				<Cell cell={ {
-					id: cell[0],
-					...cell[1]
-				} } />
-				
-			{ /each }
-		</div>
-
-		{ #if focusCell }
-
-			<CellPanel cell={ focusCell } />
-
-		{ /if }
-
-	{ :else }
-
-		<div class='jumbotron my-5'>
-			{ #if $appStore.lang === appLangsEnum.FR }
-
-				<div class='float-right'>
-					<span class='text-link'
-						on:click={ () =>
-						
-								handleSwitchLang(appLangsEnum.EN) }>
-						EN</span>
-					<span>FR</span>
-				</div>
-
-				<h1>Vivez la SAGA ZUMS !</h1>
-				<p>Êtes-vous prêts à percer les mystères de l'univers des ZUMS ?</p>
-
-				<button type='button'
-						class='btn btn-primary col-6'
-						on:click={ handleStart }>
-					Oui, je suis prêt !</button>
+			<Cell cell={ {
+				id: cell[0],
+				...cell[1]
+			} } />
 			
-			{ /if }
-			{ #if $appStore.lang === appLangsEnum.EN }
+		{ /each }
+	</div>
 
-				<div class='float-right'>
-					<span>EN</span>
-					<span class='text-link'
-						on:click={ () =>
-						
-								handleSwitchLang(appLangsEnum.FR) }>
-						FR</span>
-				</div>
-				
-				<h1>Live the ZUMS SAGA !</h1>
-				<p>Are you ready to discover the secrets of the ZUMS universe ?</p>
+	{ #if focusCell }
 
-			{ /if }
-		</div>
+		<CellPanel cell={ focusCell } />
 
 	{ /if }
-</div>
 
-<style>
+{ :else }
 
-	h1 {
-		color: #6a89cc;
-		text-transform: uppercase;
-		font-size: 4em;
-	}
-</style>
+	<LandingPage />
+
+{ /if }
