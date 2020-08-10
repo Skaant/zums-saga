@@ -9,6 +9,7 @@
 	import CellPanel from "./_components/CellPanel/CellPanel.svelte";
 	import appLangsEnum from "./_motifs/app/_enums/langs/app.langs.enum"
 	import LandingPage from './_components/LandingPage/LandingPage.svelte'
+	import Grid from './_components/Grid/Grid.svelte'
 
 	const {
 		xMin,
@@ -24,22 +25,7 @@
 	
 { #if $appStore.started }
 
-	<div>
-		{ #each Object.entries($gridStore.cells) as cell }
-
-			<Cell cell={ {
-				id: cell[0],
-				...cell[1]
-			} } />
-			
-		{ /each }
-	</div>
-
-	{ #if focusCell }
-
-		<CellPanel cell={ focusCell } />
-
-	{ /if }
+	<Grid />
 
 { :else }
 

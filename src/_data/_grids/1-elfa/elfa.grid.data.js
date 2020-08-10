@@ -26,8 +26,17 @@ export default {
         }
       }
     },
+    '-1,0': {
+      type: cellTypesEnum.SOIL
+    },
+    '0,-1': {
+      type: cellTypesEnum.HUMUS
+    },
+    '0,1': {
+      type: cellTypesEnum.GROUND
+    },
     '1,0': {
-      type: cellTypesEnum.UNREAVEALED
+      type: cellTypesEnum.RIVER
     }
   },
   zums: {

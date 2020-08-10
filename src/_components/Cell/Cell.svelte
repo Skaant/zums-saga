@@ -36,7 +36,7 @@
 
 </script>
 
-<div class='cell cell-{ cell.type } m-2'
+<div class='cell cell-{ cell.type } m-1'
     on:mouseover={ handleMouseOver }
     on:mouseout={ handleMouseOut }
     on:click={ handleClick }></div>
@@ -46,13 +46,26 @@
     height: 128px;
     width: 128px;
     border-radius: 8px;
+    cursor: pointer;
   }
 
   .cell-SOIL {
-    background-color: aquamarine;
+    background-color: #78e08f;
+  }
+
+  .cell-HUMUS {
+    background-color: #38ada9;
+  }
+
+  .cell-GROUND {
+    background-color: #fad390;
+  }
+
+  .cell-RIVER {
+    background-color: #6a89cc;
   }
 
   .cell-UNREAVEALED {
-    background-color: lavender;
+    background-color: #dfe6e9;
   }
 </style>

@@ -17,6 +17,24 @@ export default {
   [cellTypesEnum.SOIL]: {
     name: {
       [appLangsEnum.EN]: 'Soil',
+      [appLangsEnum.FR]: 'Terreau'
+    }
+  },
+  [cellTypesEnum.RIVER]: {
+    name: {
+      [appLangsEnum.EN]: 'Rivière',
+      [appLangsEnum.FR]: 'River'
+    }
+  },
+  [cellTypesEnum.HUMUS]: {
+    name: {
+      [appLangsEnum.EN]: 'Humus',
+      [appLangsEnum.FR]: 'Humus'
+    }
+  },
+  [cellTypesEnum.GROUND]: {
+    name: {
+      [appLangsEnum.EN]: 'Ground',
       [appLangsEnum.FR]: 'Terre'
     }
   }
