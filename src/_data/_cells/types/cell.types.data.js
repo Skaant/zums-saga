@@ -18,24 +18,28 @@ export default {
     name: {
       [appLangsEnum.EN]: 'Rich soil',
       [appLangsEnum.FR]: 'Terre riche'
-    }
+    },
+    image: '/icons/cell_types/wheat.svg'
   },
   [cellTypesEnum.SWAMP]: {
     name: {
       [appLangsEnum.EN]: 'Swamp',
       [appLangsEnum.FR]: 'Marais'
-    }
+    },
+    image: '/icons/cell_types/swamp.svg'
   },
   [cellTypesEnum.HUMUS]: {
     name: {
       [appLangsEnum.EN]: 'Forest humus',
       [appLangsEnum.FR]: 'Humus forestier'
-    }
+    },
+    image: '/icons/cell_types/leaf-swirl.svg'
   },
   [cellTypesEnum.PLAIN]: {
     name: {
       [appLangsEnum.EN]: 'Poor soil',
       [appLangsEnum.FR]: 'Terre pauvre'
-    }
+    },
+    image: '/icons/cell_types/grass.svg'
   }
 }

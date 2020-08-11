@@ -43,9 +43,16 @@
       <div class="modal-header">
         <h5 class="modal-title">
           <span class={ 'badge bg-' + cell.type }>
+            <img src='{ $cellTypesDataStore[cell.type].image }'
+                class='mr-2'
+                alt='{ $cellTypesDataStore[cell.type].name[lang] }' />
             { cell.id.replace(',', ', ') }
             · 
-            { $cellTypesDataStore[cell.type].name[lang] }</span>
+            { $cellTypesDataStore[cell.type].name[lang] }
+            <img src='{ $cellTypesDataStore[cell.type].image }'
+                class='ml-2'
+                alt='{ $cellTypesDataStore[cell.type].name[lang] }' />
+          </span>
         </h5>
         <button id='close-modal'
             type="button"
@@ -85,5 +92,9 @@
   .modal .badge {
     line-height: inherit;
     font-size: inherit;
+  }
+
+  .modal-title img {
+    height: 2rem;
   }
 </style>

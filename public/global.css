@@ -18,6 +18,10 @@ body {
   border: none;
 }
 
+.badge {
+  color: white;
+}
+
 .bg-grassland {
   background-color: #78e08f;
 }
@@ -36,6 +40,7 @@ body {
 
 .bg-unreavealed {
   background-color: #f8f9fa;
+  color: grey;
 }
 
 .bg-kolos {
