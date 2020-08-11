@@ -26,6 +26,10 @@ body {
   background-color: #78e08f;
 }
 
+.fill-grassland {
+  fill: #78e08f;
+}
+
 .bg-humus {
   background-color: #10ac84;
 }

@@ -1,13 +1,14 @@
 <script>
 
   export let cell
+  export let selected
 
   import buildingsDataStore from '../../_stores/buildingsData/buildingsData.store'
   import cellTypesDataStore from '../../_stores/cellTypesData/cellTypesData.store'
 	import appStore from "../../_stores/app/app.store"
   import gridStore from '../../_stores/grid/grid.store';
   import CellModalLangs from './CellModal.langs';
-	import appLangsEnum from "./../../_motifs/app/_enums/langs/app.langs.enum"
+  import appLangsEnum from "./../../_motifs/app/_enums/langs/app.langs.enum"
 
   $: building = cell.building
     && {
@@ -16,6 +17,8 @@
     }
 
   $: lang = $appStore.lang
+  $: name = $cellTypesDataStore[cell.type].name[lang]
+  $: image = $cellTypesDataStore[cell.type].image
 
   function handleDismiss(e) {
 
@@ -42,16 +45,22 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">
-          <span class={ 'badge bg-' + cell.type }>
-            <img src='{ $cellTypesDataStore[cell.type].image }'
-                class='mr-2'
-                alt='{ $cellTypesDataStore[cell.type].name[lang] }' />
+          <span class='badge bg-{ cell.type } badge-pill px-3'>
+            { #if image }
+
+              <img src='{ image }'
+                  class='mr-2'
+                  alt='{ name}' />
+            { /if }
             { cell.id.replace(',', ', ') }
             · 
             { $cellTypesDataStore[cell.type].name[lang] }
-            <img src='{ $cellTypesDataStore[cell.type].image }'
-                class='ml-2'
-                alt='{ $cellTypesDataStore[cell.type].name[lang] }' />
+            { #if image }
+
+              <img src='{ $cellTypesDataStore[cell.type].image }'
+                  class='ml-2'
+                  alt='{ $cellTypesDataStore[cell.type].name[lang] }' />
+            { /if }
           </span>
         </h5>
         <button id='close-modal'
@@ -64,13 +73,20 @@
       <div class="modal-body">
         { #if building }
 
-          <h2>
-            <span class={ 'badge bg-' + building.trighbId }>
-              { building.trighbId.toUpperCase() }</span>
-          </h2>
-          <h1>
-            { building.name[lang] }</h1>
-          <p>{ building && building.description[lang] }</p>
+          <div class='row'>
+            <div class='col-12 col-md-4'>
+              <div class='rounded-circle w-100 { 'bg-' + cell.type } p-4 mb-4'>
+                <svelte:component this={ building.imageSvgComponent } />
+              </div>
+            </div>
+            <div class='col-12 col-md-8'>
+              <h1>
+                { building.name[lang] }
+                <span class={ 'badge bg-' + building.trighbId }>
+                  { building.trighbId.toUpperCase() }</span></h1>
+              <p>{ building && building.description[lang] }</p>
+            </div>
+          </div>
 
         { :else }
 
