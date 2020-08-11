@@ -39,7 +39,7 @@
 </script>
 
 <div id='cell-modal'
-    class='modal show fade d-block'
+    class='modal show fade d-block { selected ? '' : 'modal-hover' }'
     on:click={ handleDismiss }>
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
@@ -81,9 +81,11 @@
             </div>
             <div class='col-12 col-md-8'>
               <h1>
-                { building.name[lang] }
+                { building.name[lang] }</h1>
+              <h2>
+                TRIGHB
                 <span class={ 'badge bg-' + building.trighbId }>
-                  { building.trighbId.toUpperCase() }</span></h1>
+                  { building.trighbId.toUpperCase() }</span></h2>
               <p>{ building && building.description[lang] }</p>
             </div>
           </div>
@@ -101,8 +103,18 @@
 <style>
 
   .modal {
+    transition: top 1s ease-in-out, background-color 1.6s ease-in-out;
+  }
+
+  .modal:not(.modal-hover) {
     background-color: rgba(0, 0, 0, 0.6);
     cursor: pointer;
+  }
+
+  .modal.modal-hover {
+    top: 70vh;
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events: none;
   }
 
   .modal .badge {

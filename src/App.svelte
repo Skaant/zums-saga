@@ -19,6 +19,7 @@
 	} = getGridSize($gridStore)
 
 	$: cell = $gridStore.selectedCell
+	$: hoveredCell = $gridStore.hoveredCell
 
 </script>
 	
@@ -26,10 +27,11 @@
 
 	<Grid />
 
-	{ #if cell }
+	{ #if hoveredCell || cell }
 
-		<CellModal cell={ cell } />
-		
+		<CellModal cell={ hoveredCell || cell }
+				selected={ cell
+					&& (!hoveredCell || hoveredCell.id === cell.id) } />
 	{ /if }
 
 { :else }
