@@ -2,58 +2,88 @@
 
   export let cell
 
-  import buildingDataStore from '../../_stores/buildingsData/buildingsData.store'
+  import buildingsDataStore from '../../_stores/buildingsData/buildingsData.store'
   import cellTypesDataStore from '../../_stores/cellTypesData/cellTypesData.store'
 	import appStore from "../../_stores/app/app.store"
-import gridStore from '../../_stores/grid/grid.store';
+  import gridStore from '../../_stores/grid/grid.store';
+  import CellModalLangs from './CellModal.langs';
+	import appLangsEnum from "./../../_motifs/app/_enums/langs/app.langs.enum"
 
   $: building = cell.building
     && {
-      ...$buildingDataStore[cell.building.id],
+      ...$buildingsDataStore[cell.building.id],
       ...cell.building
     }
 
   $: lang = $appStore.lang
 
-  function handleDismiss() {
+  function handleDismiss(e) {
 
-    gridStore.update(grid => ({
+    if (e.originalTarget.id === 'cell-modal'
+      || e.originalTarget.id === 'close-modal'
+      || e.originalTarget.parentElement.id === 'close-modal') {
 
-      ...grid,
-      selectedCell: false
-    }))
+      document.body.className = ''
+
+      gridStore.update(grid => ({
+
+        ...grid,
+        selectedCell: false
+      }))
+    }
   }
 
 </script>
 
-<div class='modal show fade d-block'
+<div id='cell-modal'
+    class='modal show fade d-block'
     on:click={ handleDismiss }>
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title">{
-          building
-            ? building.name[lang]
-      
-            : $cellTypesDataStore[cell.type].name[lang]
-        }</h1>
-        <h2>{
-          building
-            ? $cellTypesDataStore[cell.type].name[lang]
-          
-            : 'Pas de bâtiment'}
-        </h2>
+        <h5 class="modal-title">
+          <span class={ 'badge bg-' + cell.type }>
+            { cell.id.replace(',', ', ') }
+            · 
+            { $cellTypesDataStore[cell.type].name[lang] }</span>
+        </h5>
+        <button id='close-modal'
+            type="button"
+            class="close"
+            on:click={ handleDismiss }>
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
-        <p>{ building && building.description[lang] }</p>
+        { #if building }
+
+          <h2>
+            <span class={ 'badge bg-' + building.trighbId }>
+              { building.trighbId.toUpperCase() }</span>
+          </h2>
+          <h1>
+            { building.name[lang] }</h1>
+          <p>{ building && building.description[lang] }</p>
+
+        { :else }
+
+          <p>Pas de bâtiment.</p>
+
+        { /if }
       </div>
     </div>
   </div>
 </div>
 
 <style>
+
   .modal {
     background-color: rgba(0, 0, 0, 0.6);
     cursor: pointer;
+  }
+
+  .modal .badge {
+    line-height: inherit;
+    font-size: inherit;
   }
 </style>

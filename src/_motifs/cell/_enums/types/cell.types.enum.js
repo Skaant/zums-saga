@@ -1,14 +1,14 @@
 export default {
-  VOID: 'VOID',
-  UNREAVEALED: 'UNREAVEALED',
-  STONE: 'STONE',
-  GROUND: 'GROUND',
-  SOIL: 'SOIL',
-  HUMUS: 'HUMUS',
-  SAND: 'SAND',
-  CLAY: 'CLAY',
-  RIVER: 'RIVER',
-  LAKE: 'LAKE',
-  SEA: 'SEA',
-  OCEAN: 'OCEAN'
+  VOID: 'void',
+  UNREAVEALED: 'unreavealed',
+  STONE: 'stone',
+  PLAIN: 'plain',
+  GRASSLAND: 'grassland',
+  HUMUS: 'humus',
+  SAND: 'sand',
+  CLAY: 'clay',
+  SWAMP: 'swamp',
+  LAKE: 'lake',
+  SEA: 'sea',
+  OCEAN: 'ocean'
 }

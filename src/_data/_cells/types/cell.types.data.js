@@ -14,28 +14,28 @@ export default {
       [appLangsEnum.FR]: 'Inexploré'
     }
   },
-  [cellTypesEnum.SOIL]: {
+  [cellTypesEnum.GRASSLAND]: {
     name: {
-      [appLangsEnum.EN]: 'Soil',
-      [appLangsEnum.FR]: 'Terreau'
+      [appLangsEnum.EN]: 'Rich soil',
+      [appLangsEnum.FR]: 'Terre riche'
     }
   },
-  [cellTypesEnum.RIVER]: {
+  [cellTypesEnum.SWAMP]: {
     name: {
-      [appLangsEnum.EN]: 'Rivière',
-      [appLangsEnum.FR]: 'River'
+      [appLangsEnum.EN]: 'Swamp',
+      [appLangsEnum.FR]: 'Marais'
     }
   },
   [cellTypesEnum.HUMUS]: {
     name: {
-      [appLangsEnum.EN]: 'Humus',
-      [appLangsEnum.FR]: 'Humus'
+      [appLangsEnum.EN]: 'Forest humus',
+      [appLangsEnum.FR]: 'Humus forestier'
     }
   },
-  [cellTypesEnum.GROUND]: {
+  [cellTypesEnum.PLAIN]: {
     name: {
-      [appLangsEnum.EN]: 'Ground',
-      [appLangsEnum.FR]: 'Terre'
+      [appLangsEnum.EN]: 'Poor soil',
+      [appLangsEnum.FR]: 'Terre pauvre'
     }
   }
 }

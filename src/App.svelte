@@ -18,7 +18,7 @@
 		yMax
 	} = getGridSize($gridStore)
 
-	$: focusCell = $gridStore.selectedCell
+	$: cell = $gridStore.selectedCell
 
 </script>
 	
@@ -26,9 +26,9 @@
 
 	<Grid />
 
-	{ #if focusCell }
+	{ #if cell }
 
-		<CellModal cell={ focusCell } />
+		<CellModal cell={ cell } />
 		
 	{ /if }
 

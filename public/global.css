@@ -1,6 +1,6 @@
 html {
   min-height: 100vh;
-  background-color: #fab1a0;
+  background-color: #dff9fb;
 }
 
 body {
@@ -16,4 +16,28 @@ body {
 .btn.btn-primary {
   background-color: #6a89cc !important;
   border: none;
+}
+
+.bg-grassland {
+  background-color: #78e08f;
+}
+
+.bg-humus {
+  background-color: #10ac84;
+}
+
+.bg-plain {
+  background-color: #fad390;
+}
+
+.bg-swamp {
+  background-color: #60a3bc;
+}
+
+.bg-unreavealed {
+  background-color: #f8f9fa;
+}
+
+.bg-kolos {
+  background-color: #32ff7e;
 }

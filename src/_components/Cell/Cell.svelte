@@ -24,48 +24,34 @@
 
   function handleClick() {
 
-    gridStore.update(grid => ({
+    gridStore.update(grid => {
+      
+      document.body.className = 'modal-open'
+      
+      return {
 
-      ...grid,
-      selectedCell: grid.selectedCell
-        ? false
+        ...grid,
+        selectedCell: grid.selectedCell
+          ? false
 
-        : cell
-    }))
+          : cell
+      }
+    })
   }
 
 </script>
 
-<div class='cell cell-{ cell.type } m-1'
+<div class='cell bg-{ cell.type } m-1 shadow-sm'
     on:mouseover={ handleMouseOver }
     on:mouseout={ handleMouseOut }
     on:click={ handleClick }></div>
 
 <style>
+
   .cell {
     height: 128px;
     width: 128px;
     border-radius: 8px;
     cursor: pointer;
-  }
-
-  .cell-SOIL {
-    background-color: #78e08f;
-  }
-
-  .cell-HUMUS {
-    background-color: #38ada9;
-  }
-
-  .cell-GROUND {
-    background-color: #fad390;
-  }
-
-  .cell-RIVER {
-    background-color: #6a89cc;
-  }
-
-  .cell-UNREAVEALED {
-    background-color: #dfe6e9;
   }
 </style>

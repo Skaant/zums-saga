@@ -32,7 +32,7 @@
 
 <div class='container'>
 
-  <div class='jumbotron my-5'>
+  <div class='jumbotron my-5 shadow-lg bg-light'>
 
     <div class='float-right'>
       <span class='text-link'

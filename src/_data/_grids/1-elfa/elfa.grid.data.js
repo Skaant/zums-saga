@@ -6,7 +6,7 @@ import kolosRelikItemData from '../../_items/kolos-relik/kolos-relik.item.data';
 export default {
   cells: {
     '0,0': {
-      type: cellTypesEnum.SOIL,
+      type: cellTypesEnum.GRASSLAND,
       building: {
         id: kolosPodBuildingData.id,
         state: {
@@ -27,16 +27,16 @@ export default {
       }
     },
     '-1,0': {
-      type: cellTypesEnum.SOIL
+      type: cellTypesEnum.GRASSLAND
     },
     '0,-1': {
       type: cellTypesEnum.HUMUS
     },
     '0,1': {
-      type: cellTypesEnum.GROUND
+      type: cellTypesEnum.PLAIN
     },
     '1,0': {
-      type: cellTypesEnum.RIVER
+      type: cellTypesEnum.SWAMP
     }
   },
   zums: {

@@ -5,8 +5,8 @@ const kolosPodBuildingData = {
   id: 'kolos-pod-building',
   trighbId: kolosTrighbData.id,
   name: {
-    en: 'KOLOS pod',
-    fr: 'Capsule KOLOS'
+    en: 'Survival pod',
+    fr: 'Capsule de survie'
   },
   description: {
     en: "It looks like half an house, half a really big seed with large window openings on the sunny side.",
