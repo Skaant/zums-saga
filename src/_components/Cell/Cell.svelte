@@ -49,7 +49,7 @@
 
 </script>
 
-<div class='cell bg-{ cell.type } { building ? 'bg-building' : '' } m-1 shadow-sm'
+<div class='cell bg-{ cell.type } { building ? 'bg-building' : '' } m-1 shadow-sm position-relative'
     style='background-image: url("{
       building
         ? building.image
@@ -57,7 +57,14 @@
         : $cellTypesDataStore[cell.type].image }")'
     on:mouseover={ handleMouseOver }
     on:mouseout={ handleMouseOut }
-    on:click={ handleClick }></div>
+    on:click={ handleClick }>
+  { #if building }
+
+    <img src={ $cellTypesDataStore[cell.type].image }
+        class='cell-type-miniature position-absolute'
+        alt={ $cellTypesDataStore[cell.type].id } />
+  { /if }
+</div>
 
 <style>
 
@@ -73,6 +80,13 @@
   .cell:not(.bg-building) {
     
     background-size: 35%;
+  }
+
+  .cell-type-miniature {
+
+    bottom: 4px;
+    right: 4px;
+    width: 2rem;
   }
   
   .bg-building {
