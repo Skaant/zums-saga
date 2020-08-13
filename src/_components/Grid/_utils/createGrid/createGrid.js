@@ -1,5 +1,6 @@
 import config from "../../../../_config/config"
 import cellTypesEnum from '../../../../_motifs/cell/_enums/types/cell.types.enum'
+import CELL from '../../../../_motifs/cell/cell.motif'
 
 export default grid => ({
 
@@ -21,11 +22,13 @@ export default grid => ({
           return grid.cells[id]
             ? {
               id,
+              motifId: CELL.id,
               ...grid.cells[id]
             }
 
             : {
               id,
+              motifId: CELL.id,
               type: cellTypesEnum.UNREAVEALED
             }
         }))

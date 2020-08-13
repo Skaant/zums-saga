@@ -6,10 +6,13 @@
 	import appStore from "./_stores/app/app.store"
 	import gridStore from "./_stores/grid/grid.store"
 	import Cell from "./_components/Cell/Cell.svelte";
-	import CellModal from "./_components/CellModal/CellModal.svelte";
 	import appLangsEnum from "./_motifs/app/_enums/langs/app.langs.enum"
 	import LandingPage from './_components/LandingPage/LandingPage.svelte'
 	import Grid from './_components/Grid/Grid.svelte'
+	import Modal from "./_motifs/modal/_components/Modal/Modal.svelte";
+	import modalStore from './_motifs/modal/_stores/modal.store'
+	import { onMount } from "svelte";
+	import modalListener from "./_motifs/modal/_listeners/modal.listener";
 
 	const {
 		xMin,
@@ -18,8 +21,10 @@
 		yMax
 	} = getGridSize($gridStore)
 
-	$: cell = $gridStore.selectedCell
-	$: hoveredCell = $gridStore.hoveredCell
+	onMount(() => {
+
+		modalListener()
+	})
 
 </script>
 	
@@ -27,15 +32,16 @@
 
 	<Grid />
 
-	{ #if hoveredCell || cell }
-
-		<CellModal cell={ hoveredCell || cell }
-				selected={ cell
-					&& (!hoveredCell || hoveredCell.id === cell.id) } />
-	{ /if }
-
 { :else }
 
 	<LandingPage />
+
+{ /if }
+
+{ #if $modalStore.open }
+	
+	<Modal target={ 
+				$modalStore.history.states[
+					$modalStore.history.order[0]] } />
 
 { /if }

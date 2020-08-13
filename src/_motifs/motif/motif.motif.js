@@ -19,7 +19,8 @@ const MOTIF = {
       && self.name
       && Array.isArray(self.types) 
         && self.types.length > 1),
-  doc: () => false
+  readme: () => false,
+  wiki: () => false
 }
 
 MOTIF.test(MOTIF)

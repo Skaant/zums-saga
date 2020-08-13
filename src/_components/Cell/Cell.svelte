@@ -5,6 +5,7 @@
   import gridStore from "../../_stores/grid/grid.store";
   import cellTypesDataStore from "../../_stores/cellTypesData/cellTypesData.store";
   import buildingsDataStore from "../../_stores/buildingsData/buildingsData.store";
+  import openModalAction from "../../_motifs/modal/_actions/openModal/openModal.action";
   
   $: building = cell.building
     && {
@@ -34,17 +35,14 @@
 
     gridStore.update(grid => {
       
-      document.body.className = 'modal-open'
-      
       return {
 
         ...grid,
-        selectedCell: grid.selectedCell
-          ? false
-
-          : cell
+        selectedCell: cell
       }
     })
+
+    openModalAction(cell)
   }
 
 </script>

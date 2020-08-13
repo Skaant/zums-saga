@@ -1,4 +1,4 @@
-import appLangsEnum from "../../_motifs/app/_enums/langs/app.langs.enum";
+import appLangsEnum from "../../../app/_enums/langs/app.langs.enum";
 
 export default {
   [appLangsEnum.EN]: {
