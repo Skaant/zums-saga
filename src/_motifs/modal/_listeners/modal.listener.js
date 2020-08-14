@@ -1,4 +1,5 @@
 import modalStore from "../_stores/modal.store"
+import closeModalAction from "../_actions/closeModal/closeModal.action"
 
 let prevState = false
 
@@ -8,17 +9,16 @@ export default () =>
 
     if (state.open && !prevState.open) {
 
-      setTimeout(
-        () => $('#modal').modal('show'),
-        15
-      )
-    
-    } else if (!state.open && prevState.open) {
+      setTimeout(() => {
+        
+        $('#modal').modal('show')
+        $('#modal').on(
+          'hide.bs.modal',
+          e => {
 
-      setTimeout(
-        $('#modal').modal('hide'),
-        15
-      )
+            closeModalAction()
+          })
+      }, 25)
     }
 
     prevState = state

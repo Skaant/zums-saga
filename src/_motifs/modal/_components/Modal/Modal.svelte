@@ -9,28 +9,11 @@
 
   $: modal = $modalStore.history.states[
     $modalStore.history.order[0]]
-
-  function handleDismiss(e) {
-
-    if (e.originalTarget.id === 'cell-modal'
-      || e.originalTarget.id === 'close-modal'
-      || e.originalTarget.parentElement.id === 'close-modal') {
-
-      gridStore.update(state => ({
-
-        ...state,
-        selectedCell: false
-      }))
-
-      closeModalAction()
-    }
-  }
-
+    
 </script>
 
 <div id='modal'
-    class='modal'
-    on:click={ handleDismiss }>
+    class='modal'>
 
   <div class="modal-dialog modal-xl">
     <div class="modal-content">

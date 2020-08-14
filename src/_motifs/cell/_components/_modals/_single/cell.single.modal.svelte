@@ -46,7 +46,7 @@
   <button id='close-modal'
       type="button"
       class="close"
-      on:click={ closeModalAction }>
+      data-dismiss="modal">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
