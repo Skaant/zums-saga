@@ -1,4 +1,4 @@
-import cellTypesEnum from '../../../_motifs/cell/_enums/types/cell.types.enum'
+import cellTerrainsEnum from '../../../_motifs/cell/_enums/terrains/cell.terrains.enum'
 import kolosPodBuildingData from "../../_buildings/kolos-pod/kolos-pod.building.data";
 import genetoSeedsExtensionData from '../../_extensions/geneto-seeds/geneto-seeds.extension.data';
 import kolosRelikItemData from '../../_items/kolos-relik/kolos-relik.item.data';
@@ -6,7 +6,7 @@ import kolosRelikItemData from '../../_items/kolos-relik/kolos-relik.item.data';
 export default {
   cells: {
     '0,0': {
-      type: cellTypesEnum.GRASSLAND,
+      type: cellTerrainsEnum.GRASSLAND,
       building: {
         id: kolosPodBuildingData.id,
         state: {
@@ -27,16 +27,16 @@ export default {
       }
     },
     '-1,0': {
-      type: cellTypesEnum.GRASSLAND
+      type: cellTerrainsEnum.GRASSLAND
     },
     '0,-1': {
-      type: cellTypesEnum.HUMUS
+      type: cellTerrainsEnum.HUMUS
     },
     '0,1': {
-      type: cellTypesEnum.PLAIN
+      type: cellTerrainsEnum.PLAIN
     },
     '1,0': {
-      type: cellTypesEnum.SWAMP
+      type: cellTerrainsEnum.SWAMP
     }
   },
   zums: {

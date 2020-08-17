@@ -12,9 +12,10 @@ export default () =>
       setTimeout(() => {
         
         $('#modal').modal('show')
+
         $('#modal').on(
           'hide.bs.modal',
-          e => {
+          () => {
 
             closeModalAction()
           })
