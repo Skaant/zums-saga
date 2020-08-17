@@ -20,7 +20,7 @@ export default target => {
   }
 
   /** 2. Find target modal component */
-  const modalComponent = modalsIndex[`${ motifId }_${ number }`]
+  const modalComponent = modalsIndex[`${ number }_${ motifId }`]
 
   if (!modalComponent) {
 

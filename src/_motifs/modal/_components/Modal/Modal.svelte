@@ -15,8 +15,8 @@
 <div id='modal'
     class='modal'>
 
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content border-0">
       <svelte:component this={ modal.component }
           target={ modal } />
     </div>
@@ -25,12 +25,11 @@
 
 <style>
 
-  .modal {
-    transition: top 1s ease-in-out, background-color 1.6s ease-in-out;
+  .modal-dialog {
+    margin-top: calc(15vh + 3.5rem)
   }
 
-  .modal:not(.modal-hover) {
-    background-color: rgba(0, 0, 0, 0.6);
-    cursor: pointer;
+  .modal-content {
+    background-color: unset;
   }
 </style>

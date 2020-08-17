@@ -18,9 +18,6 @@
       gridElement.scrollHeight / 2
         - documentElement.clientHeight / 2
     )
-
-    console.log(gridElement.scrollHeight / 2,
-      documentElement.clientHeight / 2, gridElement, documentElement)
 	});
 
 </script>

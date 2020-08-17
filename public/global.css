@@ -24,6 +24,7 @@ body {
 
 .bg-grassland {
   background-color: #78e08f;
+  color: #fff;
 }
 
 .fill-grassland {
@@ -32,21 +33,25 @@ body {
 
 .bg-humus {
   background-color: #10ac84;
+  color: #fff;
 }
 
 .bg-plain {
   background-color: #fad390;
+  color: #fff;
 }
 
 .bg-swamp {
   background-color: #60a3bc;
+  color: #fff;
 }
 
 .bg-unreavealed {
   background-color: #f8f9fa;
-  color: grey;
+  color: #343a40;
 }
 
 .bg-kolos {
   background-color: #1dd1a1;
+  color: #fff;
 }

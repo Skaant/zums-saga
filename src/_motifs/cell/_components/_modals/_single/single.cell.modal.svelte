@@ -22,13 +22,14 @@
 </script>
 
 <!-- MODAL HEADER (2 components) -->
+
 <div class='modal-header'>
-  <h5 class="modal-title">
-    <span class='badge bg-{ target.type } badge-pill px-3'>
+  <h5 class="modal-title h2">
+    <span class='bg-{ target.type } px-5 rounded-pill'>
       { #if image }
 
         <img src='{ image }'
-            class='mr-2'
+            class='mr-3'
             alt='{ name}' />
       { /if }
       { target.id.replace(',', ', ') }
@@ -37,7 +38,7 @@
       { #if image }
 
         <img src='{ $cellTypesDataStore[target.type].image }'
-            class='ml-2'
+            class='ml-3'
             alt='{ $cellTypesDataStore[target.type].name[lang] }' />
       { /if }
     </span>
@@ -45,7 +46,7 @@
 
   <button id='close-modal'
       type="button"
-      class="close"
+      class="close text-white"
       data-dismiss="modal">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -55,18 +56,18 @@
 
 <!-- Terrain reader (small) -->
 <!-- Building reader (big) -->
-<div class='modal-body'>
+<div class='modal-body bg-light'>
   <p>Ok, yéyé</p>
 </div>
 
 <style>
 
-  .modal-title .badge {
-    line-height: inherit;
-    font-size: inherit;
+  .modal-title img {
+    height: 5rem;
   }
 
-  .modal-title img {
-    height: 2rem;
+  .close {
+    text-shadow: none;
+    opacity: initial;
   }
 </style>
