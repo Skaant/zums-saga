@@ -1,9 +1,13 @@
 import MOTIF from "../motif/motif.motif"
+import appLangsEnum from '../app/_enums/langs/app.langs.enum'
 
 const CELL = {
 
   id: 'cell',
-  name: 'Cell',
+  name: {
+    [appLangsEnum.EN]: 'Tile',
+    [appLangsEnum.FR]: 'Case'
+  },
   types: [ MOTIF.id ],
   create: () => {
 
@@ -16,4 +20,4 @@ const CELL = {
   doc: () => true
 }
 
-export default MOTIF
+export default CELL

@@ -1,5 +1,5 @@
 import config from "../../../../_config/config"
-import cellTerrainsEnum from '../../../../_motifs/cell/_enums/terrains/cell.terrains.enum'
+import cellTerrainsEnum from '../../../../_motifs/terrain/_enums/ids/terrain.ids.enum'
 import CELL from '../../../../_motifs/cell/cell.motif'
 
 export default grid => ({
@@ -29,7 +29,7 @@ export default grid => ({
             : {
               id,
               motifId: CELL.id,
-              type: cellTerrainsEnum.UNREAVEALED
+              terrain: cellTerrainsEnum.UNREAVEALED
             }
         }))
 })

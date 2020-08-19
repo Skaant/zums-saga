@@ -3,10 +3,13 @@
   export let cell;
   
   import gridStore from "../../_stores/grid/grid.store";
-  import cellTypesDataStore from "../../_stores/cellTypesData/cellTypesData.store";
+  import terrainDataStore from "../../_stores/terrainData/terrainData.store";
   import buildingsDataStore from "../../_stores/buildingsData/buildingsData.store";
   import openModalAction from "../../_motifs/modal/_actions/openModal/openModal.action";
-  
+  import appStore from "../../_stores/app/app.store";
+
+  $: lang = appStore.lang
+  $: terrain = $terrainDataStore[cell.terrain]
   $: building = cell.building
     && {
       ...$buildingsDataStore[cell.building.id],
@@ -47,20 +50,20 @@
 
 </script>
 
-<div class='cell bg-{ cell.type } { building ? 'bg-building' : '' } m-1 shadow-sm position-relative'
+<div class='cell bg-{ cell.terrain } { building ? 'bg-building' : '' } m-1 shadow-sm position-relative'
     style='background-image: url("{
       building
         ? building.image
-
-        : $cellTypesDataStore[cell.type].image }")'
+        
+        : terrain.image }")'
     on:mouseover={ handleMouseOver }
     on:mouseout={ handleMouseOut }
     on:click={ handleClick }>
   { #if building }
 
-    <img src={ $cellTypesDataStore[cell.type].image }
+    <img src={ terrain.image }
         class='cell-type-miniature position-absolute'
-        alt={ $cellTypesDataStore[cell.type].id } />
+        alt={ terrain.name[lang] } />
   { /if }
 </div>
 
